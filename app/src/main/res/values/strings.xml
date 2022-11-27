@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Contio</string>
+    <string name="app_description">This is an beta app for anyone who wants to add and chat with friend by their ID</string>
+    <string name="descrip">This is an beta app for anyone </string>
+
+    <string name="api_key">4x6ema8caugf</string>
+    <string name="jwt_token">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYW5oaHV5MDA3In0.NEk4S7GjaV4DoWI2-3-6FH00O7zJvh4NOOiBktUEL2Q</string>
+    <string name="facebook_icon">Facebook Icon</string>
+    <string name="invalid_user_name">Invalid user name, please enter more than 3 characters</string>
+    <string name="other_methods">Login using social network account</string>
+    <string name="welcome">Welcome to Contio!</string>
+    <string name="enter_user_name">Enter user name</string>
+    <string name="enter_password">Enter password</string>
+    <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+
+</resources>
