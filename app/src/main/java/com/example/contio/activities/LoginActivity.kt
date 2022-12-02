@@ -51,6 +51,7 @@ class LoginActivity : ComponentActivity() {
         }
     }
 
+    // catch login event returned by MutableLiveData.emit
     private fun subscribeToEvent() {
         lifecycleScope.launchWhenStarted {
             viewModel.loginEvent.collect {
@@ -155,7 +156,7 @@ class LoginActivity : ComponentActivity() {
                     Log.d("AnhHuy", "Login")
 
                 }) {
-                    Text(text = stringResource(R.string.login))
+                    Text(text = stringResource(R.string.signup))
                 }
             }
         }
@@ -199,7 +200,7 @@ class LoginActivity : ComponentActivity() {
     private fun HeaderElement() {
 
         Column {
-            Spacer(modifier = Modifier.height(100.dp))
+            Spacer(modifier = Modifier.height(70.dp))
 
             Image(
                 painter = painterResource(R.drawable.contio),

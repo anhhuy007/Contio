@@ -12,6 +12,22 @@
     <string name="enter_user_name">Enter user name</string>
     <string name="enter_password">Enter password</string>
     <string name="cancel">Cancel</string>
-    <string name="login">Login</string>
+    <string name="signin">Sign in</string>
+    <string name="signup">Sign up</string>
 
+    <string name="password_requirement_characters">At least 8 characters</string>
+
+    <string name="password_requirement_capital">At least 1 upper-case letter</string>
+
+    <string name="password_requirement_digit">At least 1 digit</string>
+    <string name="sign_in">Sign in to continue</string>
+    <string name="sign_up">Sign up new account</string>
+    <string name="password_requirement_satisfied">%s, satisfied</string>
+    <string name="password_requirement_needed">%s, needed</string>
+
+    <string name="action_need_account">Need an account?</string>
+    <string name="action_already_have_account">Already have an account?</string>
+    <string name="dont_have_account">Don\'t have any accounts?</string>
+    <string name="create_here">Create here!</string>
+    <string name="sign_in_action">Sign in here!</string>
 </resources>

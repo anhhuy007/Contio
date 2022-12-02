@@ -14,7 +14,7 @@
         android:name=".ContioApplication"
         tools:targetApi="31">
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.AuthenticationActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Contio">
@@ -29,7 +29,9 @@
                 android:value="" />
         </activity>
 
+        <activity android:name=".activities.LoginActivity"/>
         <activity android:name=".activities.ChannelListActivity"/>
+        <activity android:name=".activities.UserDetailsActivity"/>
         <activity android:name=".activities.MessageActivity"
             android:windowSoftInputMode="adjustResize" />
     </application>

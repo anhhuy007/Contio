@@ -1,7 +1,9 @@
 package com.example.contio.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,12 +20,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
-import com.example.contio.ui.theme.ContioTheme
 import com.example.contio.viewmodels.ChannelListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import io.getstream.chat.android.client.models.Filters
+import io.getstream.chat.android.client.models.User
 import io.getstream.chat.android.compose.ui.channels.ChannelsScreen
 import io.getstream.chat.android.compose.ui.theme.ChatTheme
+import kotlin.coroutines.CoroutineContext
 
 @AndroidEntryPoint
 class ChannelListActivity : ComponentActivity() {
@@ -34,6 +37,8 @@ class ChannelListActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         subscribeToEvents()
+
+        val userId = intent.getStringExtra(KEY_USER_ID) ?: ""
 
         setContent {
             ChatTheme {
@@ -63,9 +68,8 @@ class ChannelListActivity : ComponentActivity() {
                         showDialog = true
                     },
                     onHeaderAvatarClick = {
-                        viewModel.logOut()
-                        finish()
-                        startActivity(Intent(this, LoginActivity::class.java))
+                        Log.d("AnhHuy", "Go to user details activity")
+                        startActivity(UserDetailsActivity.getUserIdIntent(this, userId = userId))
                     }
                 )
             }
@@ -120,5 +124,15 @@ class ChannelListActivity : ComponentActivity() {
 
     private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        private const val KEY_USER_ID = "userId"
+
+        fun getUserIdIntent(context: Context, userId: String?) : Intent {
+            return Intent(context, ChannelListActivity::class.java).apply {
+                putExtra(KEY_USER_ID, userId)
+            }
+        }
     }
 }

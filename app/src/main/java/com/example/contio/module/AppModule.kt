@@ -1,6 +1,7 @@
 package com.example.contio.module
 
 import android.content.Context
+import androidx.compose.ui.res.stringResource
 import com.example.contio.R
 import dagger.Module
 import dagger.Provides
@@ -17,6 +18,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYW5oaHV5MDA3In0.NEk4S7GjaV4DoWI2-3-6FH00O7zJvh4NOOiBktUEL2Q"
 
     @Provides
     fun provideOfflinePluginFactory(
